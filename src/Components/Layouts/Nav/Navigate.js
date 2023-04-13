@@ -1,5 +1,10 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
+import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from 'classnames/bind'
+
+
 import style from './Navigate.module.scss'
 import NavIcon from '../../NavIcon'
 import Image from '../../Image'
@@ -7,6 +12,18 @@ import Image from '../../Image'
 const cx = classNames.bind(style)
 
 function Navigate() {
+
+  const [slides, setSlides] = useState([])
+
+  console.log(Array.isArray( slides));
+
+  useEffect(() => {
+    axios.get('https://backoffice.nodemy.vn/api/homepage?populate=*')
+      .then(res => setSlides(res.data.data))
+      .catch(error => console.log(error))
+  }, [])
+
+
   return (
     <div className={cx('wrapper')}> 
         <div className={cx('left')}>
@@ -29,9 +46,18 @@ function Navigate() {
         </div>
         <div className={cx('right')}>
           <div className={cx('slide')}>
-            <div className={cx('slide-auto')}>
+              <Carousel
+                showThumbs={false}
+                autoPlay={true}
+                transitionTime={1}
+                infiniteLoop={true}
+                showStatus={false}
+              >
+                {slides?.attributes?.leftBanner?.data.map((item, index) => (
+                  <img key={index} src={`https://backoffice.nodemy.vn${item.attributes.formats.medium.url}`} alt='' />
+                ))}
+              </Carousel>
 
-            </div>
             <div className={cx('img-slide')}>
               <Image url='https://theme.hstatic.net/1000026716/1000440777/14/xxxbanner1.jpg?v=35725' />
               <Image url='https://theme.hstatic.net/1000026716/1000440777/14/xxxbanner1.jpg?v=35725' />
