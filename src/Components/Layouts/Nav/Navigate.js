@@ -15,7 +15,7 @@ function Navigate() {
 
   const [slides, setSlides] = useState([])
 
-  console.log(Array.isArray( slides));
+
 
   useEffect(() => {
     axios.get('https://backoffice.nodemy.vn/api/homepage?populate=*')
@@ -49,7 +49,7 @@ function Navigate() {
               <Carousel
                 showThumbs={false}
                 autoPlay={true}
-                transitionTime={1}
+                transitionTime={3}
                 infiniteLoop={true}
                 showStatus={false}
               >
