@@ -14,7 +14,9 @@ function Header() {
         <header>
             <div className={cx('top')}>
                 <div className={cx('logo')}>
-                    <img src='https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35701' alt=''/>
+                    <Link to='/'> 
+                        <img src='https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35701' alt=''/>
+                    </Link>
                 </div> 
                 <div className={cx('search-item')}>
                     <div className={cx('search-top')}>

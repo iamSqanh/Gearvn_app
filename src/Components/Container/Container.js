@@ -17,8 +17,8 @@ function Container() {
 
 
     useEffect(() => {
-        axios.get('https://backoffice.nodemy.vn/api/products')
-            .then(res => setDataLaptop(res.data.data))
+        axios.get('http://localhost:4000/productSale')
+            .then(res => setDataLaptop(res.data))
             .catch(error => console.log(error))
     }, [])
 

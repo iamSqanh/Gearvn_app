@@ -8,20 +8,31 @@ const cx = classNames.bind(style)
 
 function CardItem({value}) {
 
+  const oldPrice = value.oldPrice
+  const price = value.price
+
+  const disCount = Math.floor(((oldPrice - price) / oldPrice) *100)
+
   return (
     <div className={cx('wrapper')}>
         <div className={cx('content')}>
             <div className={cx('img')}>
-              <img src='https://product.hstatic.net/1000026716/product/hw_r3_74803326b0484b748cc7525f0530fbea_large.png' alt=''/>
+              <img src={value.imgUrl} alt=''/>
               <div className={cx('popup')}>
-                <Link>Click xem chi tiết</Link>
+                <Link to={`/card/${value.id}`}>Click xem chi tiết</Link>
                 <Link>Đặt hàng</Link>
               </div>
             </div>
-            <h2>{value.attributes.name}</h2>
+            <h2>{value.name}</h2>
             <div className={cx('price')}>
-                <del>{value.attributes.oldPrice} ₫</del>
-                <span>{value.attributes.price} ₫</span>
+                <del>{value.oldPrice} ₫</del>
+                <span>{value.price} ₫</span>
+
+                <div className={cx('sale')}>
+                  -
+                  {disCount}
+                  %
+                </div>
             </div>
         </div>
     </div>

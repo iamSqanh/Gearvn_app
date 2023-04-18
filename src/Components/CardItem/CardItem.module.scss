@@ -64,6 +64,7 @@
             margin: 10px;
         }
         .price{
+            position: relative;
             padding: 0 10px 5px;
             display: flex;
             flex-direction: column;
@@ -75,6 +76,20 @@
                 font-size: 20px;
                 color: #ed0000;
                 font-weight: 700;
+            }
+
+            .sale{
+                background: url('https://theme.hstatic.net/1000026716/1000440777/14/icon-saleoff.png') no-repeat scroll center center transparent;
+                position: absolute;
+                width: 48px;
+                height: 51px;
+                bottom: 8px;
+                right: 22px;
+                text-align: center;
+                vertical-align: middle;
+                color: #180733;
+                font-size: 12px;
+                padding-top: 14px;
             }
         }
         
