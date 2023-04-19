@@ -16,13 +16,13 @@ function CardItem({value}) {
   return (
     <div className={cx('wrapper')}>
         <div className={cx('content')}>
-            <div className={cx('img')}>
+            <Link to={`/card/${value.id}`} className={cx('img')}>
               <img src={value.imgUrl} alt=''/>
               <div className={cx('popup')}>
                 <Link to={`/card/${value.id}`}>Click xem chi tiết</Link>
-                <Link>Đặt hàng</Link>
+                <Link to={`/card/${value.id}`}>Đặt hàng</Link>
               </div>
-            </div>
+            </Link>
             <h2>{value.name}</h2>
             <div className={cx('price')}>
                 <del>{value.oldPrice} ₫</del>

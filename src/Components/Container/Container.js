@@ -33,7 +33,16 @@ function Container() {
         </div>
         <div className={cx('item')}>
             <div className={cx('titile')}>
-                <h2>lap top gaming bán chạy </h2>
+                <h2>PC GEARVN - MUA HÀNG TIẾT KIỆM, CHI PHÍ KHỎI LO</h2>
+                <a>Xem tất cả <MdOutlineArrowForwardIos/></a>
+            </div>
+            <div className={cx('grid-layout')}>
+                {dataLaptop.map((value) => <CardItem key={value.id} value={value}/>)}
+            </div>
+        </div>
+        <div className={cx('item')}>
+            <div className={cx('titile')}>
+                <h2>LAPTOP GAMING BÁN CHẠY</h2>
                 <a>Xem tất cả <MdOutlineArrowForwardIos/></a>
             </div>
             <div className={cx('grid-layout')}>
