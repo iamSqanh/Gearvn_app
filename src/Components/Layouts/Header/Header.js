@@ -2,13 +2,20 @@ import React from 'react'
 import classNames from 'classnames/bind'
 import style from './Header.module.scss'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
 import {FaSearch} from 'react-icons/fa'
 import {BsList} from 'react-icons/bs'
 
 const cx = classNames.bind(style)
 
 
+
 function Header() {
+
+    const cartCount = useSelector((state) => state.addCartItem.quantity)
+    console.log(cartCount);
+
   return (
     <div className={cx('header')}>
         <header>
@@ -40,8 +47,8 @@ function Header() {
                                 </li>
                                 <li>
                                     <img src='https://theme.hstatic.net/1000026716/1000440777/14/ak5.png?v=35701' alt=''/>
-                                    <Link>Giỏ hàng</Link>
-                                    <p className={cx('cart-count')}>0</p>
+                                    <Link to='/cart'>Giỏ hàng</Link>
+                                    <p className={cx('cart-count')}>{cartCount}</p>
                                 </li>
                             </ul>
                         </div>

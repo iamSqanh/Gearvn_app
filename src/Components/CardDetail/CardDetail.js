@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import { Link, useParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addCart } from '../../redux/addCartSlide'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -14,6 +16,8 @@ const cx = classNames.bind(style)
 
 
 function CardDetail() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const {id} = useParams()
 
@@ -27,9 +31,23 @@ function CardDetail() {
 
   }, [])
 
+
+  const handleAddCart = (e) => {
+    e.preventDefault()
+    const add = {
+      productImg: dataLaptop?.imgUrl,
+      productName: dataLaptop?.name,
+      quantity: 1,
+      price: dataLaptop?.price
+    }
+
+    dispatch(addCart(add))
+    navigate("/cart")
+
+    console.log(add);
+  }
+
   return (
-    <>
-        <Header />
         <div className={cx('wrapper')}>
             <div className={cx('top')}>
               <div className={cx('slide-img')}> 
@@ -46,7 +64,7 @@ function CardDetail() {
                       showIndicators={false}
                     >
                       {dataLaptop?.carouseDetail?.map(item => (
-                        <div style={{ width: "100%" }}>
+                        <div key={item.id} style={{ width: "100%" }}>
                           <img src={item.carouseUrl} alt=''/>
                       </div>
                       ))}
@@ -78,7 +96,7 @@ function CardDetail() {
                     <span>Giá mới: </span>
                     <span className={cx('price')}>{dataLaptop.price} đ</span>
                   </p>
-                  <Button text='Đặt hàng' />
+                  <button onClick={handleAddCart}>Đặt hàng</button>
                 </form>
               </div>
             </div>
@@ -119,7 +137,6 @@ function CardDetail() {
               </div>
 
         </div>
-    </>
   )
 }
 

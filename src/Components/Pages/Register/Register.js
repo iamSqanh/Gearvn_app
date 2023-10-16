@@ -15,8 +15,7 @@ const cx = classNames.bind(style)
 
 function Register() {
   return (
-    <>
-      <Header />
+
       <div className={cx('wrapper')}>
           <h1>Tạo tài khoản</h1>
             <CustomInput avt={<BsFillPersonFill/>} place='Họ'/>
@@ -29,7 +28,6 @@ function Register() {
               <Button text='Quay về'/>
             </div>
       </div>
-    </>
   )
 }
 

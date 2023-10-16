@@ -6,14 +6,13 @@ import Footer from '../../Layouts/Footer'
 
 
 
-
 function Home() {
+
+
   return (
     <div>
-        <Header/>
         <Navigate/>
         <Container/>
-        <Footer />
     </div>
   )
 }

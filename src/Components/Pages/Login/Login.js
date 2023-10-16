@@ -15,8 +15,6 @@ const cx = classNames.bind(style)
 
 function Login() {
   return (
-    <>
-        <Header/>
         <div className={cx('wrapper')}>
             <h1>Đăng nhập</h1>
             <CustomInput avt={<HiOutlineMail/>} place='Email'/>
@@ -28,7 +26,6 @@ function Login() {
                 <Link to='/register'>Đăng ký</Link>
             </div>
         </div>
-    </>
   )
 }
 
