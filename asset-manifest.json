@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Gearvn_app/static/css/main.bc674778.css",
+    "main.js": "/Gearvn_app/static/js/main.224f8ab3.js",
+    "static/js/787.1eed5837.chunk.js": "/Gearvn_app/static/js/787.1eed5837.chunk.js",
+    "index.html": "/Gearvn_app/index.html",
+    "main.bc674778.css.map": "/Gearvn_app/static/css/main.bc674778.css.map",
+    "main.224f8ab3.js.map": "/Gearvn_app/static/js/main.224f8ab3.js.map",
+    "787.1eed5837.chunk.js.map": "/Gearvn_app/static/js/787.1eed5837.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc674778.css",
+    "static/js/main.224f8ab3.js"
+  ]
+}
